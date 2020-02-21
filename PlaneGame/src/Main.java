@@ -1,6 +1,9 @@
+import com.ahmiao.PlayGameFrame;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        PlayGameFrame gameFrame=new PlayGameFrame();
+        gameFrame.launchFrame();
     }
 }
