@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
  * @author AhmiaoChen
  */
 public class PlayGameFrame extends JFrame {
+    Image bg=GameUtil.getImage("images/plane.png");
     /**
      * 初始化窗口
      */
@@ -39,6 +40,6 @@ public class PlayGameFrame extends JFrame {
         g.drawLine(100,100,300,300);
         g.draw3DRect(100,100,300,300,false);
         g.drawString("AhmiaoChen",100,100);
-
+        g.drawImage(bg,250,250,null);
     }
 }
