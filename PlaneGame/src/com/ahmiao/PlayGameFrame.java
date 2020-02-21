@@ -1,6 +1,7 @@
 package com.ahmiao;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -25,5 +26,19 @@ public class PlayGameFrame extends JFrame {
                 System.exit(0);
             }
         });
+    }
+
+    /**
+     * 窗口的绘制
+     * @param g
+     */
+    @Override
+    public void paint(Graphics g){//自动被调用。g相当一只画笔
+        super.paint(g);
+        g.setColor(Color.red);
+        g.drawLine(100,100,300,300);
+        g.draw3DRect(100,100,300,300,false);
+        g.drawString("AhmiaoChen",100,100);
+
     }
 }
