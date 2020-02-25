@@ -15,7 +15,7 @@ public class GsaonConfig {
         GsonHttpMessageConverter converter = new GsonHttpMessageConverter();
         GsonBuilder builder = new GsonBuilder();
         builder.setDateFormat("yyyy+MM+dd");
-        builder.excludeFieldsWithModifiers(Modifier.PROTECTED);
+        // builder.excludeFieldsWithModifiers(Modifier.PROTECTED);
         Gson gson = builder.create();
         converter.setGson(gson);
         return converter;
