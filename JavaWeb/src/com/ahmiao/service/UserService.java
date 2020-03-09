@@ -41,4 +41,16 @@ public interface UserService {
      * @return
      */
     public User findUserById(String id);
+
+    /**
+     * 添加用户
+     * @param user
+     */
+    public void updateUser(User user);
+
+    /**
+     * 删除选中用户
+     * @param uids
+     */
+    public void delSelectedUser(String[] uids);
 }

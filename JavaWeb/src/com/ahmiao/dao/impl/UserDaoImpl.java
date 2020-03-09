@@ -49,14 +49,31 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void deleteUser(String id) {
-        //1.定义sql
-        String sql="delete from user where id= ?";
-        //2.执行sql
-        template.update(sql,Integer.parseInt(id));
+        if(id!=null) {
+            //1.定义sql
+            String sql = "delete from user where id= ?";
+            //2.执行sql
+            template.update(sql, Integer.parseInt(id));
+        }
     }
 
     @Override
     public User findUserById(String id) {
-        return null;
+        //1.编写sql
+        String sql="select * from user where id =?";
+        //2.执行sql
+        return template.queryForObject(sql,
+                new BeanPropertyRowMapper<User>(User.class),Integer.parseInt(id));
     }
+
+    @Override
+    public void update(User user) {
+        //1.定义sql
+        String sql="update user set name=?,gender=?,age=?,address=?,qq=?,email=? where id=?";
+        //2.执行sql
+        template.update(sql,user.getName(),user.getGender(),user.getAge()
+                ,user.getAddress(),user.getQq(),user.getEmail(),user.getId());
+    }
+
+
 }

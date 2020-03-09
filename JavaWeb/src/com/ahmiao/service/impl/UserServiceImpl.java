@@ -39,4 +39,18 @@ public class UserServiceImpl implements UserService {
     public User findUserById(String id) {
         return dao.findUserById(id);
     }
+
+    @Override
+    public void updateUser(User user) {
+        dao.update(user);
+    }
+
+    @Override
+    public void delSelectedUser(String[] uids) {
+        //1.遍历数组
+        for(String id:uids){
+            dao.deleteUser(id);
+        }
+
+    }
 }

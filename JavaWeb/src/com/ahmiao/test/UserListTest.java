@@ -15,6 +15,10 @@ import java.util.List;
 public class UserListTest {
     @Test
     public void findAllTset(){
+        Object object;
+        List list;
+        String a="dd";
+        a.toString();
         //1.调用userService完成查询
         UserService service = new UserServiceImpl();
         List<User> users=service.findAll();

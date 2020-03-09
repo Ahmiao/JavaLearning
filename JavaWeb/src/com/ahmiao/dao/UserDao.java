@@ -19,4 +19,7 @@ public interface UserDao {
     public void deleteUser(String id);
 
     public User findUserById(String id);
+
+    public void update(User user);
+
 }

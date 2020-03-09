@@ -37,6 +37,41 @@
                 location.href="${pageContext.request.contextPath}/delUserServlet?id="+id;
             }
         }
+        window.onload=function () {
+            //删除选中的按钮添加单击事件
+            document.getElementById("delSelected").onclick=function () {
+                if(confirm("宁确定要删除选中的信息吗？")){
+                    var flag = false;
+                    //判断是否有选中条目
+                    var cbs = document.getElementsByName("uid");
+                    for (var i = 0; i < cbs.length; i++) {
+                        if(cbs[i].checked){
+                            //有一个条目选中了
+                            flag = true;
+                            break;
+                        }
+                    }
+
+                    if(flag){//有条目被选中
+                        //表单提交
+                        document.getElementById("form").submit();
+                    }
+                }
+
+            }
+            //1.获取第一个cb
+            document.getElementById("firstCb").onclick = function(){
+                //2.获取下边列表中所有的cb
+                var cbs = document.getElementsByName("uid");
+                //3.遍历
+                for (var i = 0; i < cbs.length; i++) {
+                    //4.设置这些cbs[i]的checked状态 = firstCb.checked
+                    cbs[i].checked = this.checked;
+
+                }
+
+            }
+        }
     </script>
 </head>
 <body>
@@ -61,11 +96,12 @@
     </div>
     <div style="float: right;margin: 5px">
         <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a>
-        <a class="btn btn-primary" href="${pageContext.request.contextPath}/delUserServlet?id=${user.id}">删除选中</a>
+        <a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>
     </div>
+    <form id="form" action="${pageContext.request.contextPath}/delSelectedServlet" method="post">
     <table border="1" class="table table-bordered table-hover">
         <tr class="success">
-            <td><input type="checkbox"></td>
+            <th><input type="checkbox" id="firstCb"></th>
             <th>编号</th>
             <th>姓名</th>
             <th>性别</th>
@@ -78,7 +114,7 @@
 
         <c:forEach items="${users}" var="user" varStatus="s">
             <tr>
-                <th><input type="checkbox"></th>
+                <td><input type="checkbox" id="uid" name="uid" value="${user.id}"></td>
                 <td>${s.count}</td>
                 <td>${user.name}</td>
                 <td>${user.gender}</td>
@@ -90,9 +126,8 @@
             </tr>
 
         </c:forEach>
-
-
     </table>
+    </form>
     <div>
         <nav aria-label="Page navigation">
             <ul class="pagination">
