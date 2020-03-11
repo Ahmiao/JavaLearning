@@ -1,4 +1,4 @@
-package com.ahmiao.hellloword;
+package com.ahmiao.helloworld;
 
 /**
  * @Description

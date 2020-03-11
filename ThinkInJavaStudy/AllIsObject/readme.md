@@ -82,7 +82,7 @@ Java在设计时使用了关键字：class。
 Java的方法决定了一个对象能够接收什么样的消息。方法的基本组成部分包括：名称、参数、返回值和方法体。  
 基本的形式：
 ```java
-ReturnType methodName(/*参数列表*/){
+   ReturnType methodName(/*参数列表*/){
     /*方法体*/
 }
 ```
@@ -105,5 +105,58 @@ public class HelloWorld {
     }
 }
 ```
+### 2.7.1 编译和运行
+在安装好JDK后，设置好环境变量后，使用两个命令：  
+1.javac HelloWorld.java  
+2.java HelloWorld  
 输出结果：  
 ![helloworld](images/helloworld.png) 
+## 2.8 注释和嵌入式文档
+### 2.8.1 注释文档
+javadoc是提取java注释的工具，它是jdk的一部分。
+### 2.8.2 语法
+所有的javadoc只能在“/**”注释中出现，和通常一样，注释结束于“*/”。
+使用就javadoc的方式主要有两种：嵌入HTML，或者使用文档标签。
+### 2.8.3 嵌入式HTML 
+详细参考HTML
+### 一些标签示例
+#### 1.@see:引用其他类
+@see标签允许用户引用其他类的文档。javadoc会在其生成的HTML文件中，通过
+@see标签可以连接到其他文档中。格式如下：
+```java
+    @see classname
+    @see full-qualified-classname
+    @see full-qualified-classname#method-name
+```
+#### 2.{@link package.class#member label}
+该标签与@see极其相似，只是它作用于行内。
+#### 3.{@docRoot}
+该标签产生到文档根目录的相对路径，用于文档树的显式链接。
+#### 4.{@inheritDoc}
+该标签从当前这个类的最直接的基类中继承相关文档到当前的文档注释中。
+#### 5.{@version}
+格式如下：
+```java
+    @version 版本信息
+``` 
+#### 6.@author
+格式如下：
+```java
+    @author 作者信息
+```
+#### 7.@since
+该标签允许你指定程序代码最早使用的版本。
+#### 8.@param
+该表用于方法文档中，形式如下：
+```java
+    @param 参数描述
+```
+#### 9.@return
+该表用于方法文档中，形式如下：
+```java
+    @return 返回参数描述
+```
+#### 10.throws
+它们是某个方法调用失败而抛出的对象。
+#### 11.deprecated
+该表用于指出一些旧特性已由改进的新特性所取代，建议用户不要用该特性。
