@@ -1,8 +1,10 @@
 package com.ahmiao.dao;
 
+import com.ahmiao.domain.PageBean;
 import com.ahmiao.domain.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description 用户操作的dao
@@ -10,16 +12,33 @@ import java.util.List;
  * @Date 2020-03-07 22:21
  */
 public interface UserDao {
+
+
     public List<User> findAll();
 
-    public User findUsernameAndPassword(User user);
+    User findUserByUsernameAndPassword(String username, String password);
 
-    public void add(User user);
+    void add(User user);
 
-    public void deleteUser(String id);
+    void delete(int id);
 
-    public User findUserById(String id);
+    User findById(int i);
 
-    public void update(User user);
+    void update(User user);
 
+    /**
+     * 查询总记录数
+     * @return
+     * @param condition
+     */
+    int findTotalCount(Map<String, String[]> condition);
+
+    /**
+     * 分页查询每页记录
+     * @param start
+     * @param rows
+     * @param condition
+     * @return
+     */
+    List<User> findByPage(int start, int rows, Map<String, String[]> condition);
 }

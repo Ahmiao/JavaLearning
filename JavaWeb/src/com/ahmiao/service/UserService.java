@@ -1,8 +1,10 @@
 package com.ahmiao.service;
 
+import com.ahmiao.domain.PageBean;
 import com.ahmiao.domain.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description
@@ -10,6 +12,7 @@ import java.util.List;
  * @Date 2020-03-07 22:18
  */
 public interface UserService {
+
     /**
      * 查询所有用户信息
      * @return
@@ -17,40 +20,50 @@ public interface UserService {
     public List<User> findAll();
 
     /**
-     * 登录
+     * 登录方法
      * @param user
      * @return
      */
-    public User login(User user);
+    User login(User user);
 
     /**
      * 保存User
      * @param user
      */
-    public void addUser(User user);
+    void addUser(User user);
 
     /**
      * 根据id删除User
      * @param id
      */
-    public void deleteUser(String id);
+    void deleteUser(String id);
 
     /**
      * 根据id查询
      * @param id
      * @return
      */
-    public User findUserById(String id);
+    User findUserById(String id);
 
     /**
-     * 添加用户
+     * 修改用户信息
      * @param user
      */
-    public void updateUser(User user);
+    void updateUser(User user);
 
     /**
-     * 删除选中用户
-     * @param uids
+     * 批量删除用户
+     * @param ids
      */
-    public void delSelectedUser(String[] uids);
+    void delSelectedUser(String[] ids);
+
+    /**
+     * 分页条件查询
+     * @param currentPage
+     * @param rows
+     * @param condition
+     * @return
+     */
+    PageBean<User> findUserByPage(String currentPage, String rows, Map<String, String[]> condition);
 }
+
