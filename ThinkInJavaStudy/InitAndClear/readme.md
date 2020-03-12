@@ -62,6 +62,13 @@ public void Test{
     type[] val1;
     type  val2[];
 ```
+## 5.9 枚举类型
++ 格式如下：
+```java
+    public enum Type{
+        TYPE1,TYPE2,TYPE3
+    }
+```
 
 
 
