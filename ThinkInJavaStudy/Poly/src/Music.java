@@ -11,6 +11,7 @@ public class Music {
     }
     @Test
     public void testMusic(){
+        Boolean d;
         Wind flute=new Wind();
         tune(flute);
     }
