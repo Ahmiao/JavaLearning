@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AccessAuthority/AccessAuthority.iml" filepath="$PROJECT_DIR$/AccessAuthority/AccessAuthority.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AllIsObject/AllIsObject.iml" filepath="$PROJECT_DIR$/AllIsObject/AllIsObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/controlflow/ControlFlow.iml" filepath="$PROJECT_DIR$/controlflow/ControlFlow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InitAndClear/InitAndClear.iml" filepath="$PROJECT_DIR$/InitAndClear/InitAndClear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntroductionOfObjct/IntroductionOfObjct.iml" filepath="$PROJECT_DIR$/IntroductionOfObjct/IntroductionOfObjct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Operation/Operation.iml" filepath="$PROJECT_DIR$/Operation/Operation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Poly/Poly.iml" filepath="$PROJECT_DIR$/Poly/Poly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReuseClass/ReuseClass.iml" filepath="$PROJECT_DIR$/ReuseClass/ReuseClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThinkInJavaStudy.iml" filepath="$PROJECT_DIR$/ThinkInJavaStudy.iml" />
+    </modules>
+  </component>
+</project>
