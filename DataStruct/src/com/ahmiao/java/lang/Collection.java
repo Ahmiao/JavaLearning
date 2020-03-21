@@ -66,7 +66,7 @@ public interface Collection<T> extends Iterable<T> {
     boolean containsAll(Collection<?> c);
 
     /**
-     * 把另一个集合的
+     * 把另一个集合的元素添加到另一个集合中
      * @param c
      * @return
      */
